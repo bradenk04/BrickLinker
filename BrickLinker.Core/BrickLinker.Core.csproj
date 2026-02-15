@@ -1,0 +1,520 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="../GameData.props" Condition="Exists('../GameData.props')" />
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="Koala.Analytics">
+        <HintPath>..\lib\Koala.Analytics.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Analytics.GameAnalytics">
+        <HintPath>..\lib\Koala.Analytics.GameAnalytics.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Art.VFX.Board">
+        <HintPath>..\lib\Koala.Art.VFX.Board.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Art.VFX.Core">
+        <HintPath>..\lib\Koala.Art.VFX.Core.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Art.VFX.Core.PathCreation">
+        <HintPath>..\lib\Koala.Art.VFX.Core.PathCreation.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.AssetTools">
+        <HintPath>..\lib\Koala.AssetTools.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.AssetTools.BakeryUtil">
+        <HintPath>..\lib\Koala.AssetTools.BakeryUtil.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.AssetTools.BAP">
+        <HintPath>..\lib\Koala.AssetTools.BAP.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.AssetTools.BAP.Editor">
+        <HintPath>..\lib\Koala.AssetTools.BAP.Editor.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.AssetTools.BrickFX">
+        <HintPath>..\lib\Koala.AssetTools.BrickFX.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.AssetTools.BuildSpaces">
+        <HintPath>..\lib\Koala.AssetTools.BuildSpaces.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.AssetTools.LEGOTools">
+        <HintPath>..\lib\Koala.AssetTools.LEGOTools.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.AssetTools.Performance">
+        <HintPath>..\lib\Koala.AssetTools.Performance.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.AssetTools.PlaneReflections">
+        <HintPath>..\lib\Koala.AssetTools.PlaneReflections.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.AssetTools.PLS">
+        <HintPath>..\lib\Koala.AssetTools.PLS.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.AssetTools.StudioImporter">
+        <HintPath>..\lib\Koala.AssetTools.StudioImporter.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.AssetTools.VATs">
+        <HintPath>..\lib\Koala.AssetTools.VATs.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.AssetTools.VATsOld">
+        <HintPath>..\lib\Koala.AssetTools.VATsOld.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Audio">
+        <HintPath>..\lib\Koala.Audio.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Audio.Signals">
+        <HintPath>..\lib\Koala.Audio.Signals.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Board">
+        <HintPath>..\lib\Koala.Board.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Cinematics">
+        <HintPath>..\lib\Koala.Cinematics.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Client">
+        <HintPath>..\lib\Koala.Client.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Client.Standalone">
+        <HintPath>..\lib\Koala.Client.Standalone.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Client.Steam">
+        <HintPath>..\lib\Koala.Client.Steam.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Client.Utilities">
+        <HintPath>..\lib\Koala.Client.Utilities.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Core">
+        <HintPath>..\lib\Koala.Core.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Core.AsyncLoading">
+        <HintPath>..\lib\Koala.Core.AsyncLoading.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Core.Client">
+        <HintPath>..\lib\Koala.Core.Client.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Debugging">
+        <HintPath>..\lib\Koala.Debugging.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Debugging.Interface">
+        <HintPath>..\lib\Koala.Debugging.Interface.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Dialogue">
+        <HintPath>..\lib\Koala.Dialogue.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Extensions">
+        <HintPath>..\lib\Koala.Extensions.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.FakeAreaLights">
+        <HintPath>..\lib\Koala.FakeAreaLights.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.GameShow">
+        <HintPath>..\lib\Koala.GameShow.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.GradientAmbientLight">
+        <HintPath>..\lib\Koala.GradientAmbientLight.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Hathora">
+        <HintPath>..\lib\Koala.Hathora.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Lightbaking">
+        <HintPath>..\lib\Koala.Lightbaking.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Lighting">
+        <HintPath>..\lib\Koala.Lighting.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minifigs">
+        <HintPath>..\lib\Koala.Minifigs.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minifigs.FaceAnimation.Linkers">
+        <HintPath>..\lib\Koala.Minifigs.FaceAnimation.Linkers.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minifigs.Tests">
+        <HintPath>..\lib\Koala.Minifigs.Tests.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames">
+        <HintPath>..\lib\Koala.Minigames.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.AirHockey">
+        <HintPath>..\lib\Koala.Minigames.AirHockey.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.AnimalCensus">
+        <HintPath>..\lib\Koala.Minigames.AnimalCensus.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.ArtCritic">
+        <HintPath>..\lib\Koala.Minigames.ArtCritic.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.AstronautFarts">
+        <HintPath>..\lib\Koala.Minigames.AstronautFarts.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.BallBoppers">
+        <HintPath>..\lib\Koala.Minigames.BallBoppers.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.Battle">
+        <HintPath>..\lib\Koala.Minigames.Battle.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.BlockSnap">
+        <HintPath>..\lib\Koala.Minigames.BlockSnap.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.BoulderSmash">
+        <HintPath>..\lib\Koala.Minigames.BoulderSmash.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.BrickFind">
+        <HintPath>..\lib\Koala.Minigames.BrickFind.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.BrickGuess">
+        <HintPath>..\lib\Koala.Minigames.BrickGuess.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.BurgerDrones">
+        <HintPath>..\lib\Koala.Minigames.BurgerDrones.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.CarCrossing">
+        <HintPath>..\lib\Koala.Minigames.CarCrossing.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.DanceOff">
+        <HintPath>..\lib\Koala.Minigames.DanceOff.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.DirtBike">
+        <HintPath>..\lib\Koala.Minigames.DirtBike.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.DoorSequence">
+        <HintPath>..\lib\Koala.Minigames.DoorSequence.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.FeelingGolfy">
+        <HintPath>..\lib\Koala.Minigames.FeelingGolfy.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.FireTrucks">
+        <HintPath>..\lib\Koala.Minigames.FireTrucks.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.FireworksInSpace">
+        <HintPath>..\lib\Koala.Minigames.FireworksInSpace.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.ForeverSorting">
+        <HintPath>..\lib\Koala.Minigames.ForeverSorting.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.ForkliftBalance">
+        <HintPath>..\lib\Koala.Minigames.ForkliftBalance.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.FourWheelDrive">
+        <HintPath>..\lib\Koala.Minigames.FourWheelDrive.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.GlideTarget">
+        <HintPath>..\lib\Koala.Minigames.GlideTarget.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.Helicoiners">
+        <HintPath>..\lib\Koala.Minigames.Helicoiners.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.HoppilyEverAfter">
+        <HintPath>..\lib\Koala.Minigames.HoppilyEverAfter.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.IceDrop">
+        <HintPath>..\lib\Koala.Minigames.IceDrop.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.InvisibleRace">
+        <HintPath>..\lib\Koala.Minigames.InvisibleRace.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.Jetpack">
+        <HintPath>..\lib\Koala.Minigames.Jetpack.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.Lander">
+        <HintPath>..\lib\Koala.Minigames.Lander.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.LoopyLaps">
+        <HintPath>..\lib\Koala.Minigames.LoopyLaps.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.MartianMatch">
+        <HintPath>..\lib\Koala.Minigames.MartianMatch.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.MazeRunner">
+        <HintPath>..\lib\Koala.Minigames.MazeRunner.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.Moontower">
+        <HintPath>..\lib\Koala.Minigames.Moontower.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.MuseumMayhem">
+        <HintPath>..\lib\Koala.Minigames.MuseumMayhem.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.NanoRally">
+        <HintPath>..\lib\Koala.Minigames.NanoRally.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.NinjaTraining">
+        <HintPath>..\lib\Koala.Minigames.NinjaTraining.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.OnRailsShooting">
+        <HintPath>..\lib\Koala.Minigames.OnRailsShooting.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.PainterRunner">
+        <HintPath>..\lib\Koala.Minigames.PainterRunner.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.PaintingHouses">
+        <HintPath>..\lib\Koala.Minigames.PaintingHouses.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.PeopleWatching">
+        <HintPath>..\lib\Koala.Minigames.PeopleWatching.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.PerfectPillars">
+        <HintPath>..\lib\Koala.Minigames.PerfectPillars.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.PointAndClick">
+        <HintPath>..\lib\Koala.Minigames.PointAndClick.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.PotLuck">
+        <HintPath>..\lib\Koala.Minigames.PotLuck.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.PyramidGate">
+        <HintPath>..\lib\Koala.Minigames.PyramidGate.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.ReadTheInstructions">
+        <HintPath>..\lib\Koala.Minigames.ReadTheInstructions.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.RockClimb">
+        <HintPath>..\lib\Koala.Minigames.RockClimb.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.RocketGames">
+        <HintPath>..\lib\Koala.Minigames.RocketGames.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.RockPaperClaw">
+        <HintPath>..\lib\Koala.Minigames.RockPaperClaw.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.Rollerbrawl">
+        <HintPath>..\lib\Koala.Minigames.Rollerbrawl.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.RopeGames">
+        <HintPath>..\lib\Koala.Minigames.RopeGames.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.RopeRobbery">
+        <HintPath>..\lib\Koala.Minigames.RopeRobbery.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.RopeRun">
+        <HintPath>..\lib\Koala.Minigames.RopeRun.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.RopeWrestle">
+        <HintPath>..\lib\Koala.Minigames.RopeWrestle.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.RowboatRescue">
+        <HintPath>..\lib\Koala.Minigames.RowboatRescue.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.RubberDubTub">
+        <HintPath>..\lib\Koala.Minigames.RubberDubTub.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.Saucerlord">
+        <HintPath>..\lib\Koala.Minigames.Saucerlord.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.ShapeDrawing">
+        <HintPath>..\lib\Koala.Minigames.ShapeDrawing.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.ShellYeah">
+        <HintPath>..\lib\Koala.Minigames.ShellYeah.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.SkiJump">
+        <HintPath>..\lib\Koala.Minigames.SkiJump.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.SKUMaster">
+        <HintPath>..\lib\Koala.Minigames.SKUMaster.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.SlideHustle">
+        <HintPath>..\lib\Koala.Minigames.SlideHustle.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.Spaceball2v2">
+        <HintPath>..\lib\Koala.Minigames.Spaceball2v2.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.SpaceballFFA">
+        <HintPath>..\lib\Koala.Minigames.SpaceballFFA.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.SpaceshipBattle">
+        <HintPath>..\lib\Koala.Minigames.SpaceshipBattle.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.SpeedBuilder">
+        <HintPath>..\lib\Koala.Minigames.SpeedBuilder.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.SpinPassRace">
+        <HintPath>..\lib\Koala.Minigames.SpinPassRace.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.Spooky">
+        <HintPath>..\lib\Koala.Minigames.Spooky.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.SpotlightSearch2v2">
+        <HintPath>..\lib\Koala.Minigames.SpotlightSearch2v2.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.StopDropSideScroll">
+        <HintPath>..\lib\Koala.Minigames.StopDropSideScroll.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.TankBrawl">
+        <HintPath>..\lib\Koala.Minigames.TankBrawl.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.TapandFlip">
+        <HintPath>..\lib\Koala.Minigames.TapandFlip.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.TorchlightTally">
+        <HintPath>..\lib\Koala.Minigames.TorchlightTally.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.TshirtLauncher">
+        <HintPath>..\lib\Koala.Minigames.TshirtLauncher.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.TumbleTime">
+        <HintPath>..\lib\Koala.Minigames.TumbleTime.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.TurningHeads">
+        <HintPath>..\lib\Koala.Minigames.TurningHeads.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.VeryTallRace">
+        <HintPath>..\lib\Koala.Minigames.VeryTallRace.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.WheelyFast">
+        <HintPath>..\lib\Koala.Minigames.WheelyFast.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.WheelyGames">
+        <HintPath>..\lib\Koala.Minigames.WheelyGames.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.WipeoutJump">
+        <HintPath>..\lib\Koala.Minigames.WipeoutJump.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Minigames.ZigZagSnowboard">
+        <HintPath>..\lib\Koala.Minigames.ZigZagSnowboard.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Multiplayer">
+        <HintPath>..\lib\Koala.Multiplayer.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Multiplayer.Hathora">
+        <HintPath>..\lib\Koala.Multiplayer.Hathora.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Multiplayer.Hathora.Adapter">
+        <HintPath>..\lib\Koala.Multiplayer.Hathora.Adapter.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Multiplayer.Hathora.Core">
+        <HintPath>..\lib\Koala.Multiplayer.Hathora.Core.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Narrative">
+        <HintPath>..\lib\Koala.Narrative.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.PostProcessing">
+        <HintPath>..\lib\Koala.PostProcessing.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.QA.TestPlans">
+        <HintPath>..\lib\Koala.QA.TestPlans.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.SceneProcessing">
+        <HintPath>..\lib\Koala.SceneProcessing.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Session">
+        <HintPath>..\lib\Koala.Session.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Settings.Renderer">
+        <HintPath>..\lib\Koala.Settings.Renderer.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Social.Common">
+        <HintPath>..\lib\Koala.Social.Common.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Social.Core">
+        <HintPath>..\lib\Koala.Social.Core.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Social.Impl">
+        <HintPath>..\lib\Koala.Social.Impl.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Social.Nakama">
+        <HintPath>..\lib\Koala.Social.Nakama.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Social.UI">
+        <HintPath>..\lib\Koala.Social.UI.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Social.UI.Dev">
+        <HintPath>..\lib\Koala.Social.UI.Dev.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Studio">
+        <HintPath>..\lib\Koala.Studio.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.TechArtFeatures">
+        <HintPath>..\lib\Koala.TechArtFeatures.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.TechArtFeatures.CameraFocusing">
+        <HintPath>..\lib\Koala.TechArtFeatures.CameraFocusing.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.TechArtFeatures.FlashToWhite">
+        <HintPath>..\lib\Koala.TechArtFeatures.FlashToWhite.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.TechArtFeatures.ParticleLOD">
+        <HintPath>..\lib\Koala.TechArtFeatures.ParticleLOD.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.TechArtFeatures.RopeAligner">
+        <HintPath>..\lib\Koala.TechArtFeatures.RopeAligner.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.TechArtFeatures.StudDrawer">
+        <HintPath>..\lib\Koala.TechArtFeatures.StudDrawer.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.TechArtFeatures.TAA">
+        <HintPath>..\lib\Koala.TechArtFeatures.TAA.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.TechArtFeatures.UniversalShaderSettings">
+        <HintPath>..\lib\Koala.TechArtFeatures.UniversalShaderSettings.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.TechArtFeatures.VFXFlagAnimator">
+        <HintPath>..\lib\Koala.TechArtFeatures.VFXFlagAnimator.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.TechArtFeatures.VisibilityChecking">
+        <HintPath>..\lib\Koala.TechArtFeatures.VisibilityChecking.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.TechArtUtilities">
+        <HintPath>..\lib\Koala.TechArtUtilities.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.TechArtUtilities.BakeryAutomation">
+        <HintPath>..\lib\Koala.TechArtUtilities.BakeryAutomation.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.TechArtUtilities.LowLevel">
+        <HintPath>..\lib\Koala.TechArtUtilities.LowLevel.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.TechArtUtilities.ProfilingSuite">
+        <HintPath>..\lib\Koala.TechArtUtilities.ProfilingSuite.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.TechArtUtilities.UnityTools">
+        <HintPath>..\lib\Koala.TechArtUtilities.UnityTools.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Tests.CrossSave">
+        <HintPath>..\lib\Koala.Tests.CrossSave.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Tests.Input">
+        <HintPath>..\lib\Koala.Tests.Input.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Tests.Networking">
+        <HintPath>..\lib\Koala.Tests.Networking.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Tests.Tools">
+        <HintPath>..\lib\Koala.Tests.Tools.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.Tutorial">
+        <HintPath>..\lib\Koala.Tutorial.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.UI">
+        <HintPath>..\lib\Koala.UI.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.VFX">
+        <HintPath>..\lib\Koala.VFX.dll</HintPath>
+      </Reference>
+      <Reference Include="Koala.VFX.Demo">
+        <HintPath>..\lib\Koala.VFX.Demo.dll</HintPath>
+      </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+            <HintPath>..\lib\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.InputSystem">
+            <HintPath>..\lib\Unity.InputSystem.dll</HintPath>
+        </Reference>
+        <Reference Include="Il2Cppmscorlib">
+            <HintPath>..\lib\Il2Cppmscorlib.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.753" />
+      <PackageReference Include="Il2CppInterop.Runtime" Version="1.5.1-ci.809" />
+    </ItemGroup>
+  
+    <Target Name="DeployDLL" AfterTargets="Build">
+        <Warning Text="Game folder not set, please follow setup instructions." Condition="'$(GameDir)' == ''" />
+        <Message Text="Deploying to Game Folder: $(GameDir)" Importance="High" Condition="'$(GameDir)' != ''" />
+        <Copy SourceFiles="$(TargetPath)"
+              DestinationFolder="$(GameDir)\BepInEx\plugins\$(TargetFileName)"
+              Condition="'$(GameDir)' != '' And Exists('$(GameDir)')" />
+    </Target>
+
+</Project>

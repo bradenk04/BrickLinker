@@ -1,0 +1,30 @@
+bin/
+obj/
+lib/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+
+GameData.props
+BrickLinker.sln.DotSettings.user
+
+# Build/lib artifacts
+[Bb]in/
+[Oo]bj/
+*.dll
+*.pdb
+*.exe
+*.so
+*.dylib
+
+# IDE Files
+.idea/
+*.sln.iml
+.vs/
+*.suo
+*.userprefs
+
+# OS Files
+.DS_Store
+Thumbs.db
+Desktop.ini
