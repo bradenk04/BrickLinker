@@ -6,7 +6,7 @@ riderModule.iml
 /_ReSharper.Caches/
 
 GameData.props
-BrickLinker.sln.DotSettings.user
+*.user
 
 # Build/lib artifacts
 [Bb]in/

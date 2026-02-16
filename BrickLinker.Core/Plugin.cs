@@ -1,6 +1,9 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
 using BepInEx.Unity.IL2CPP;
+using BrickLinker.Core.Api.Events;
+using BrickLinker.Core.Api.Events.Arguments;
+using HarmonyLib;
 using Il2CppInterop.Runtime.Injection;
 
 namespace BrickLinker.Core;
@@ -17,5 +20,15 @@ public class Plugin : BasePlugin
         
         ClassInjector.RegisterTypeInIl2Cpp<Loop>();
         AddComponent<Loop>();
+        
+        var harmony = new Harmony("io.github.bradenk04.bricklinker");
+        harmony.PatchAll();
+
+        PlayerEvents.OnPlayerGainStuds += OnPlayerGainedStuds;
+    }
+    
+    public void OnPlayerGainedStuds(object? sender, StudGainArgs e)
+    {
+        Plugin.Log?.LogInfo($"Player gained studs: P{e.Player.Slot} {e.Player.Username} +{e.Amount}");
     }
 }
