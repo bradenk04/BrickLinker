@@ -15,8 +15,13 @@ public class StudModificationHooks
     {
         Plugin.Log?.LogInfo($"adding {value} studs to {__instance}");
         var player = new Player(__instance._player);
-        PlayerEvents.TriggerStudGain(player, value);
-        return true;
+        var args = PlayerEvents.TriggerStudGain(player, value, animationType, extendAnimation);
+
+        value = args.Amount;
+        extendAnimation = args.ExtendAnimation;
+        animationType = args.AnimationType;
+        
+        return !args.IsCancelled;
     }
 
 }

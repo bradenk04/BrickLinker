@@ -30,5 +30,6 @@ public class Plugin : BasePlugin
     public void OnPlayerGainedStuds(object? sender, StudGainArgs e)
     {
         Plugin.Log?.LogInfo($"Player gained studs: P{e.Player.Slot} {e.Player.Username} +{e.Amount}");
+        e.IsCancelled = true;
     }
 }
