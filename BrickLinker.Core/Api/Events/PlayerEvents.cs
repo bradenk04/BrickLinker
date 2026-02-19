@@ -9,7 +9,7 @@ public static class PlayerEvents
     public static event EventHandler<BrickGainArgs>? OnPlayerGainBricks;
     public static event EventHandler<StudGainArgs>? OnPlayerGainStuds;
 
-    internal static BrickGainArgs TriggerBrickGain(IPlayer player, int amount)
+    internal static BrickGainArgs TriggerBrickGain(IPlayer player, int amount, BoardPlayerInfo.CurrencyAnimationType animationType, bool isInitialBrick)
     {
         var args = new BrickGainArgs(player, amount);
         OnPlayerGainBricks?.Invoke(null, args);
